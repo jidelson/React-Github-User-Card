@@ -31,6 +31,9 @@ class MyCard extends React.Component {
         <div>
             Public Repos: {this.props.userProps.public_repos}  
         </div>
+        <div>
+            Followers: {this.props.userProps.followers}
+        </div>
         </CardBody>
         </Card>
        </div>
