@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import MyCard from './components/Card';
 import axios from 'axios';
+import FollowerCard from './components/FollowerCard';
 
 const url = 'https://api.github.com/users/jidelson'
 const followers = 'https://api.github.com/users/jidelson/followers'
@@ -15,6 +16,8 @@ class App extends React.Component {
     followers: []
   }
   }
+
+
 
   componentDidMount(){
     console.log("cDM is fetching data...");
@@ -42,11 +45,16 @@ class App extends React.Component {
   render(){
   return(
     <div>
-    <div>
       <MyCard 
       userProps={this.state.users}
       />
-    </div>
+      {
+      this.state.followers.map(user => {
+        return (<FollowerCard
+        userProps={user}
+        />)
+      })
+      }
     </div>
   )
 }

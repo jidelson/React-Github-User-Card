@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, CardImg, CardBody} from 'reactstrap';
 
-class MyCard extends React.Component {
+class FollowerCard extends React.Component {
     render(){
     return (
         <div>
@@ -19,26 +19,24 @@ class MyCard extends React.Component {
             color: 'blue'
             }}>
         <CardImg src={this.props.userProps.avatar_url} />
-        <div>
-            Name: {this.props.userProps.name}
-        </div>
-        <div>
-            Location: {this.props.userProps.location}
-        </div>
+       
+       
         <div>
             Login: {this.props.userProps.login}
         </div>
-        <div>
-            Public Repos: {this.props.userProps.public_repos}  
-        </div>
-        <div>
-            Followers: {this.props.userProps.followers}
-        </div>
+       
+       <div>
+           Id: {this.props.userProps.id}
+       </div>
+
+       <div>
+            URL: {this.props.userProps.html_url}
+       </div>
         </CardBody>
         </Card>
        </div>
     )}
 }
 
-export default MyCard;
+export default FollowerCard;
 
